@@ -53,6 +53,7 @@ class ContactData extends Component {
         deliveryMethod: {
           elementType: 'select',
           elementConfig: {
+            type: 'select',
             options: [
               {value: 'fastest', displayValue: 'Fastest'},
               {value: 'chepeast', displayValue: 'Cheapest'}
@@ -97,12 +98,14 @@ class ContactData extends Component {
       <form>
         {formElementsArray.map(formElement => (
           <Input
-            key={formElement.id}
-            elementType={formElement.config.elementType}
-            elementConfig={formElement.config.elementConfig}
-            value={formElement.config.value}
-            />
+              key={formElement.id}
+              elementType={formElement.config.elementType}
+              elementConfig={formElement.config.elementConfig}
+              value={formElement.config.value}
+              changed={(event) => this.inputChangedHandler(event, formElement.id)}
+          />
         ))}
+
         <Button btnType="Success" clicked={this.orderHandler}>ORDER</Button>
        </form>
     );
