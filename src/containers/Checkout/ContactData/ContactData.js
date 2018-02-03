@@ -18,7 +18,8 @@ class ContactData extends Component {
             },
             value: '',
             validation: {
-                required: true
+                required: true,
+                minLength: 3
             },
             valid: false,
             touched: false,
@@ -32,7 +33,8 @@ class ContactData extends Component {
             },
             value: '',
             validation: {
-                required: true
+                required: true,
+                minLength: 3
             },
             valid: false,
             touched: false,
@@ -62,7 +64,8 @@ class ContactData extends Component {
             },
             value: '',
             validation: {
-                required: true
+                required: true,
+                minLength: 3
             },
             valid: false,
             touched: false,
@@ -76,7 +79,8 @@ class ContactData extends Component {
             },
             value: '',
             validation: {
-                required: true
+                required: true,
+                minLength: 3
             },
             valid: false,
             touched: false,
@@ -124,10 +128,10 @@ class ContactData extends Component {
   }
 
   checkValidity(value, rules){
-    let isValid = true;
+    let isValid = false;
     // console.log("value: "+value+" rules:"+rules.required);
     if (rules.required) {
-      isValid = value.trim() !== '' && isValid;
+      isValid = value.trim() !== '';
     }
 
     if (rules.minLength) {
@@ -157,7 +161,7 @@ class ContactData extends Component {
     //updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
     updatedFormElement.touched = true;
     updatedOrderForm[inputIdentifier] = updatedFormElement;
-    // console.log(updatedFormElement);
+    //console.log(updatedFormElement);
 
     let formIsValid = true;
     for (let inputIdentifier in updatedOrderForm) {
