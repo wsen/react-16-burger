@@ -16,8 +16,9 @@ const reducer = (state = initialState, action) => {
                 ingredients: state.ingredients.concat(newIngredient)
             }
         case actionTypes.REMOVE_INGREDIENT:
-            const 
+        
     }
+        
 };
 
 export default reducer;
